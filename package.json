@@ -1,0 +1,24 @@
+{
+  "name": "ethereum-signature",
+  "version": "1.0.0",
+  "description": "This static application sign and verify messages using Ether.js",
+  "main": "application.js",
+  "scripts": {
+    "start": "node application.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ethers": "^5.4.3",
+    "express": "^4.17.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fcmiranda/ethereum-signature.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fcmiranda/ethereum-signature/issues"
+  },
+  "homepage": "https://github.com/fcmiranda/ethereum-signature#readme"
+}

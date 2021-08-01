@@ -1,0 +1,434 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+.metamask {
+	width: 100px;
+	height: 100px;
+}
+.metamask:hover {
+	opacity: 0.8;
+}
+
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+section
+{
+	position: relative;
+	min-height: 95vh;
+	background: #c3deff52;;
+	display: flex;
+	padding: 20px;
+	justify-content: center;
+	align-items: center;
+	transition: 0.5s;
+	overflow: hidden;
+}
+
+section:before {
+	content: "";
+	position: absolute;
+	height: 2000px;
+	width: 2000px;
+    top: -53%;
+    right: -20%;
+	transform: translateY(-50%);
+	background-image: linear-gradient(-45deg, #808080 0%, #004ba8 100%);
+	transition: 1.8s ease-in-out;
+	border-radius: 50%;
+}
+
+section.connected {	
+	background: #c3f7ff;
+}
+
+section.connected:before {
+	top: 50%;
+    right: -19%;  
+	transform: translateY(-50%);
+	background-image: linear-gradient(-45deg, #808080 0%, #003ba8 100%);	
+	border-radius: 50%;	
+}
+
+section.success
+{
+	background: #738879;
+}
+section.success::before {
+	top: 50%;
+    right: 16%;
+    z-index: 0;
+    height: 3000px;
+    width: 3000px;
+    background-image: linear-gradient(-45deg, #54f18d 0%, #61ad87 100%);
+}
+
+section.fail
+{
+	background: #e94b4b;
+}
+section.fail::before {
+	top: 120%;
+    right: 7%;
+    z-index: 0;
+    height: 3000px;
+    width: 3000px;
+	background-image: linear-gradient(-45deg, #808080 0%, #df2b2b 100%);
+}
+
+
+section.success #verificationMessage
+{
+	color: hsl(157, 88%, 26%);
+}
+section.fail #verificationMessage
+{
+	color: #e94b4b;
+}
+
+section.active
+{
+	background: #5a5a5a;
+}
+section .container
+{
+	position: relative;
+	width: 1000px;
+	height: 730px;
+	margin: 20pxs;
+	
+}
+
+section .container .blueBg
+{
+	position: absolute;
+	top: 40px;
+	width: 100%;
+	height: 420px;
+	display: flex;
+	background: rgba(255,255,255,0.2);
+	box-shadow: 0 15px 50px rgba(0,0,0,.1);
+	justify-content: center;
+	align-items: center;
+	border-radius: 25px;
+}
+
+section .container .blueBg .box
+{
+	position: relative;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	
+}
+
+section .container .blueBg .box h2 {
+	color: #0689ee;
+	font-size: 1.2em;
+	font-weight: 500;
+	margin-bottom: 10px;
+}
+
+section .container .blueBg .box button {
+	cursor: pointer;
+	padding: 10px 20px;
+	background: #555;
+	color: #fff;
+	font-size: 16;
+	font-weight: 500;
+	border: none;
+}
+
+section .container .card
+{
+	position: absolute;
+	top: 0px;
+	left: 0;
+	width: 50%;
+	height: 70%;
+	background: #fff;
+	z-index: 1000;	
+	border-radius: 25px;
+	transition: 0.5s;
+	overflow: hidden;
+}
+
+section .container .card .formBx
+{
+	position: absolute;
+	width: 100%;
+	height: 100%;		
+	justify-content: space-around;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	transition: 0.5s;	
+	display: flex;
+}
+
+section .container .card .formBx.connect
+{	
+	justify-content: start;
+    top: 135px;
+}
+
+section .container .card .formBx.connect .wrapper
+{	
+	display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+section .container .card .formBx .btnWrapper {	
+	text-align: center;
+}
+
+section .container .card .formBx h2
+{
+	font-size: 18px;
+	font-weight: 600;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+	text-align: center;
+	width: 100%;
+	margin-bottom: 10px;
+	color: #555;
+}
+section .container .card .formBx input,
+section .container .card .formBx textarea
+{
+	width: 100%;
+	padding: 10px;
+	background: #f5f5f5;
+	color: #333;
+	border: none;
+	outline: none;
+	box-shadow: none;
+	font-size: 14px;
+	margin: 8px 0;
+	letter-spacing: 1px;
+	font-weight: 300;
+}
+
+section .container .card .formBx textarea
+{
+	height: 200px;
+	resize: none;
+}
+
+section .container .card .formBx textarea.rawSignature
+{
+	height: 85px;
+}
+section .container .card .formBx input[type="submit"]
+{	
+	width: auto;
+	background: #3e3e3e;
+	color: #fff;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 500;
+	letter-spacing: 1px;
+	transition: 0.5s;
+}
+
+section .container .card .formBx button
+{
+	background: #4e4e4e0d;
+    border-radius: 20px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border: none;
+    padding: 10px;
+}
+section .container.active .card .formBx input[type="submit"]
+{
+	background: #e73e49;
+}
+section .container .card .formBx .signup
+{
+	position: relative;
+	margin-top: 20px;
+	font-size: 12px;
+	letter-spacing: 1px;
+	color: #555;
+	text-transform: uppercase;
+	font-weight: 300;
+}
+section .container .card .formBx .signup a
+{
+	font-weight: 600;
+	text-decoration: none;
+	color: #677eff;
+}
+
+section .container .card 
+{
+	left: 0%;	
+}
+section .container .card.connected 
+{
+	left: -0.5%;	
+}
+section .container .card.active 
+{
+	left: 50%;
+	height: 100%;	
+}
+section .container .card.signed 
+{	
+	height: 100%;	
+}
+
+section .container .card.connected .connect,
+section .container .card.active .connect
+{
+	display: none;	
+}
+section .container .card .sign
+{
+	display: none;	
+}
+section .container .card.connected .sign
+{
+	display: flex;
+	align-items: stretch;	
+}
+section .container .card.connected .signedFields
+{
+	display: none;	
+}
+
+section .container .card.connected.signed .signedFields
+{
+	display: block;
+}
+
+section .container .card.connected .sign #signedConfirmation
+{
+	text-align: center;
+	color: hsl(157, 88%, 26%);
+}
+
+section .container .card .verify  
+{
+	left: 100%;	
+}
+section .container .card.active .verify.active 
+{
+	left: 0%;
+}
+
+section .container .card .sign 
+{
+	left: -100%
+}
+section .container .card .sign.active
+{
+	left: -100%;
+}
+section .container .card .sign
+{
+	left: 0%;
+}
+section .container .card .sign.active
+{
+	left: -100%;
+}
+
+.footer {
+	position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+	height: 47px;
+    line-height: 47px;
+    background-color: #dededebd;
+  }
+
+.footer a{
+	text-decoration: none;
+	color: #0069b9;
+}
+
+@media (max-width: 991px)
+{
+	.footer {
+		height: 127px;
+	}
+
+	section .container
+	{
+		max-width: 400px;
+		height: 775px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	section .container .card {
+		width: 100%;
+		height: 650px;
+	}
+
+	section .container .card.connected {
+		left: 0%;
+	}
+
+	section .container .blueBg {
+		height: 100%;
+		top: 0;
+	}
+
+	section .container .blueBg .box
+	{
+		position: absolute;
+		width: 100%;
+		height: 120px;
+		bottom: 0;
+	}
+	section .container .blueBg .box.sign
+	{
+		top: 0;
+	}
+
+	section .container .card.active
+	{
+		top: 150px;
+		left: 0;
+	}
+
+	section .container .card .sign.active
+	{	
+		left: 0;
+    	top: -100%;
+	}
+
+	section .container .card .verify  {
+		top: initial;
+    	bottom: -100%;
+		left: 0;
+	}
+
+	section .container .card .verify.active {
+		top: initial;
+    	bottom: 0%;
+	}
+
+	section .container .card .formBx textarea.rawSignature {
+		height: 110px;
+	}
+	
+}

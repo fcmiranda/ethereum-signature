@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Sign & Verify Messages on Ethereum | Ether.js</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+        <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
+	</head>
+	<body>
+        <section>
+            <div class="container">
+                <div class="blueBg">
+                    <div class="box sign">
+                        <h2></h2>
+                        <button class="signInBtn" onclick="App.toggleForm();">Sign Message</button>
+                    </div>
+                    <div class="box">                        
+                        <button class="signOutBtn" onclick="App.toggleForm();">Verify Message</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="formBx connect">
+                        <h2>Ethereum signature</h2></br></br>
+                        <h2>please, connect with metamask.</h2>
+                        <div class="wrapper">                                                                              
+                            <button onclick="App.connect()"><img src="metamask.svg" alt="Metamask" class="metamask"> </button>
+                        </div>
+                    </div>                    
+                    <div class="formBx sign">
+                        <form onsubmit="App.sign(event)" class="message">
+                            <h2>Ethereum Signature</h2>
+                            <label>Message</label>                            
+                            <textarea class="message" placeholder="This message proves you own the address from your connected Metamask account. &#10;&#10;For example, &quot;I am Felipe and this is my address. &quot; " required></textarea>                          
+                            <div class="btnWrapper">                                
+                                <input type="submit" value="Sign message">
+                            </div>
+                        </form>
+                        <div id="signedConfirmation">
+                        </div>
+                        <form class="signedFields">
+                            <label>Signer Address</label>
+                            <input type="text" class="address" readonly>
+                            <label>Signature Hash</label>                            
+                            <textarea class="rawSignature"  placeholder="Message Signature Hash" readonly></textarea>                                                       
+                         
+                        </form>
+                    </div>  
+                    <div class="formBx verify">
+                        <form onsubmit="App.verify(event)">
+                            <h2>Verify Ethereum Signed Message Signature</h2>
+                            <label>Signer Address</label>
+                            <input type="text" class="address" placeholder="Address" required>
+                            <label>Signature Hash</label>
+                            <textarea class="rawSignature"  placeholder="Message Signature Hash" required></textarea> 
+                            <label>Original Message</label>
+                            <textarea class="message"  placeholder="The original message that was signed" required></textarea>                                                        
+                            <div class="btnWrapper">                                
+                                <input type="submit" value="Verify Message">                                
+                            </div>                            
+                        </form>
+                        <div id="verificationMessage">
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </section>    
+        <footer class="footer">
+            <div class="container">
+                <span class="text-muted">Created by
+                    <a href="https://github.com/fcmiranda" target="blank">Felipe Cavalcante Miranda</a> - Source on
+                    <a href="https://github.com/fcmiranda/ethereum-signature" target="blank">GitHub</a> - Using
+                    <a href="https://docs.ethers.io/v5" target="blank">Ethers.js v5</a> - Favicon made by
+                    <a href="https://creativemarket.com/eucalyp" title="Eucalyp">Eucalyp</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+                </span>                    
+            </div>
+        </footer>
+        
+        <script src="./date_fns.min.js" language="javascript"></script>
+        <script src="./ethers-5.2.umd.min.js" language="javascript"></script>
+        <script src="./sign.js" language="javascript"></script>
+	</body>
+</html>
