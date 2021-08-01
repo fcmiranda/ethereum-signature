@@ -22,7 +22,7 @@
       document.querySelector(".verify textarea.message").value = message;
 
       document.getElementById("signedConfirmation").innerHTML = 'Message signed on ' + dateFns.format(new Date(), "YYYY-MM-DD hh:mm:ss");;      
-      document.querySelector(".card").classList.add('signed');
+      document.querySelector(".container").classList.add('signed');
     },
     verify: async (evt) => {
       evt.preventDefault();
@@ -57,7 +57,7 @@
     toggleForm: () => {
       var card = document.querySelector('.card');
       var signinBtn = document.querySelector('.formBx.sign');
-      var boxsigninBtn = document.querySelector('.box.sign');
+      var boxsigninBtn = document.querySelector('.blueBg');
       var signupBtn = document.querySelector('.verify');
       card.classList.toggle('active');
       signinBtn.classList.toggle('active');

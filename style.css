@@ -284,7 +284,7 @@ section .container .card.active
 	left: 50%;
 	height: 100%;	
 }
-section .container .card.signed 
+section .container.signed .card
 {	
 	height: 100%;	
 }
@@ -308,7 +308,7 @@ section .container .card.connected .signedFields
 	display: none;	
 }
 
-section .container .card.connected.signed .signedFields
+section .container.signed .card.connected .signedFields
 {
 	display: block;
 }
@@ -368,6 +368,11 @@ section .container .card .sign.active
 		height: 127px;
 	}
 
+	section {
+		height: 1125px;
+		margin-top: -145px;
+	}
+
 	section .container
 	{
 		max-width: 400px;
@@ -392,6 +397,10 @@ section .container .card .sign.active
 		top: 0;
 	}
 
+	section .container.signed .blueBg {		
+		top: 130px;
+	}
+
 	section .container .blueBg .box
 	{
 		position: absolute;
@@ -399,9 +408,13 @@ section .container .card .sign.active
 		height: 120px;
 		bottom: 0;
 	}
-	section .container .blueBg .box.sign
+	section .container .blueBg.active .box.sign
 	{
 		top: 0;
+	}
+
+	section .container.signed .blueBg.active {
+		top: 30px;
 	}
 
 	section .container .card.active
