@@ -1,6 +1,6 @@
 #  Ethereum signature
 
-This is static application allow to sign and verify messages using Ether.js.
+This static application allow to sign and verify messages using Ether.js.
 
 [Try it here](https://fcmiranda.github.io/ethereum-signature/).
 
